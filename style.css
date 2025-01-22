@@ -332,7 +332,9 @@ button {
     background: var(--second-bg-color);
 }
 .heading {
-    
+    text-align: center;
+    font-size: xx-large;
+    color: var(--text-color);
 }
 .services-container {
     display: grid;
@@ -397,7 +399,7 @@ button {
     background-color: var(--bg-color);
 }
 .skills .container {
-    background: #e1352c54;
+    background: #312525;
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
@@ -415,7 +417,7 @@ button {
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 1rem;
-    background: #e1362c;
-    box-shadow: 0 4px 10px var(--main-color)
-    
+    background: #000000;
+    box-shadow: 0 4px 10px var(--main-color);
+    transition: 0.3 ease;
 }
