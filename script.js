@@ -55,3 +55,17 @@ function plusSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block  ";
 }
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+mobileMenuIcon.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+mobileMenu.classList.toggle('open', false);
+
+mobileMenu.style.display = mobileMenu.classList.contains('open') ? "block" : "none";
+
+mobileMenuIcon.addEventListener('click', () => {
+  mobileMenu.style.display = mobileMenu.classList.contains('open') ? "block" : "none";
+});
