@@ -10,21 +10,28 @@
     box-sizing: border-box;
 }
 :root {
-    --bg-color: #0A0627B3;
-    --text-color: #faf5e9;
-    --main-color: #FFBADE;
-
+    --bg-color: #030313;
+    --text-color: #E8EAF6;
+    --main-color: #00fff2;
+    --accent-color: #FFA87D;
+    --hover-glow: rgba(255, 110, 145, 0.7);
+    --active-color: #20C997;
+    --secondary-color: #B9BBE0;
 }
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
 }
 body {
-    background: #000000;
-    font-family: "Poppins", sans-serif;
+    background: var(--bg-color);
     color: var(--text-color);
-    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+    mix-blend-mode: lighten;
 }
+
 html::-webkit-scrollbar{
     width: 0.8rem;
 }
@@ -58,18 +65,36 @@ html::-webkit-scrollbar-thumb {
 }
 
 /* Logo */
+
 .logo {
     font-size: 3rem;
-    color: var(--main-color);
     font-weight: 800;
     cursor: pointer;
-    transition: 0.5s ease;
+    transition: transform 0.5s ease;
+    animation: logoColorChange 5s infinite; /* Add color-changing animation */
 }
 
+/* Logo Color Change Animation */
+
+@keyframes logoColorChange {
+    0% { color: #ff5900; } /* Red */
+    25% { color: #09ff01; } /* Green */
+    50% { color: #d201fc; } /* Blue */
+    75% { color: #ffcc00; } /* Yellow */
+    100% { color: #ff00b7; } /* Back to Red */
+    
+}
+
+.home-img{
+    height: 80%;
+    width: 80%;
+}
 .logo:hover {
-    transform: scale(1.1);
-}   
+    transform: scale(1.1); /* Scale on hover */
+}
+
 /* Navbar Links */
+
 .navbar {
     display: flex;
     gap: 2rem;
@@ -90,6 +115,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 /* Mobile Menu Icon */
+
 .fa-solid {
     display: none !important;
     cursor: pointer;
@@ -98,6 +124,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 /* Responsive Styles */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -120,7 +147,8 @@ html::-webkit-scrollbar-thumb {
     .navbar a.active {
         border-bottom: 3px solid var(--main-color);
     }
-    /* Mobile Menu Icon */
+
+
     .fa-solid {
         display: block !important;
         margin-top: 2rem;
@@ -138,13 +166,15 @@ section{
     align-items: center;
     background: var(--bg-color);
 }
+
+
 .home .home-content h1{
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
 }
 span{
-    color: #20c997;
+    color: #38d098;
 }
 .slider img{
     display: flex;
@@ -157,8 +187,11 @@ span{
 .home-content p{
     display: flex;
     font-size: 1.8rem;
-    font-weight: 500PX;
+    font-weight: 500;
 }
+
+/* Social Icon */
+
 .social-icon a{
     display: inline-flex;
     justify-content: center;
@@ -169,16 +202,17 @@ span{
     border: 0.2rem solid var(--main-color);
     font-size: 2rem;
     border-radius: 50%;
-    
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;color: var(--main-color);
 }
-.social-icon a:hover{
+
+.social-icon a:hover {
     color: black;
-    transform: scale(1.3)translateY(-5px);
+    transform: scale(1.3) translateY(-5px);
     background: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 50px var(--main-color);
 }
+
 
 .btn{
     display: inline-block;
@@ -212,7 +246,7 @@ span{
 }
 
 #typing {
-    border-right: 2px solid var(--main-color);
+    border-right: 7px solid var(--main-color);
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
@@ -247,7 +281,6 @@ span{
 /*services section*/
 
 .services {
-    background: rgba(20, 16, 52, 0.7);
     background: transparent;
 }
 .heading {
@@ -263,12 +296,12 @@ span{
     padding: 2.5rem;
 }
 .service-box{
-    background-color: #1f2529;
+    background-color: #0d4d4d7a;
     height: 300px;
     border-radius: 3rem;
     cursor: pointer;
-    transition: 0.3s ease;
 }
+
 .service-box:hover{
     background: transparent;
     color: var(--text-color);
@@ -288,13 +321,24 @@ span{
     font-size: 2.5rem;
     font-weight:500;
     margin-bottom: 1rem;
-    color: #f78f8f;
+    color: #ef7b7b;
 }
 .service-info p{
     font-size: 1.6rem;
     font-weight: 400;
     max-height: 100px;
     margin: auto;
+}
+@keyframes animate-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 @media (max-width:991px){
     section {
@@ -312,9 +356,30 @@ span{
     grid-template-columns: repeat(1,1fr);
     }
 }
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* skills section */
 
+.skill {
+    margin-bottom: 20px;
+}
+.percent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #09f9f9;
+    font-weight: bold;
+    padding-right: 10px;
+    line-height: 30px;
+}
+
+.skill-bar span {
+    transition: width 1s ease-out;
+}
 .skills {
     background-color: var(--bg-color);
     text-align: center;
@@ -333,7 +398,7 @@ span{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     flex-wrap: wrap;
-    gap: 5.9rem;
+    gap: -0.1rem;
 }
 .skills .container .bar {
     margin-bottom: 15px;
@@ -366,3 +431,171 @@ span{
     font-size: 20px;
     text-align: center;
 }
+h2{
+    font-size: 32px;
+}
+
+ /* education */
+
+
+.education-map {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+}
+.timeline {
+    position: relative;
+    padding: 20px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #4caf50;
+}
+.milestone {
+    position: relative;
+    margin: 40px 0;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+.milestone:nth-child(odd) {
+    margin-right: auto;
+    margin-left: 20%;
+}
+.milestone:nth-child(even) {
+    margin-left: auto;
+    margin-right: 20%;
+}
+.milestone .circle {
+    width: 20px;
+    height: 20px;
+    background: #4caf50;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.milestone:nth-child(even) .circle {
+    left: unset;
+    right: -15px;
+}
+.milestone h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffc001;
+}
+.milestone p {
+    font-size: 16px;
+    color: #21e9b0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* contact */
+
+ .contact-box {
+      background: transparent;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      display: block;
+      margin-left: 500px;
+      margin: 100px auto;
+    }
+
+    .contact-heading {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+    }
+
+    .submit-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-button:hover {
+      background-color: #0056b3;
+    } 
+     
