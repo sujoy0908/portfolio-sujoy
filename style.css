@@ -198,8 +198,8 @@ span{
 }
 /* Skills images */
 .skills .container .bar .info img {
-    width: 60px; /* Adjust size for skill icons */
-    height: 60px; /* Maintain aspect ratio */
+    width: 40px; /* Adjust size for skill icons */
+    height: 40px; /* Maintain aspect ratio */
     border-radius: 10px; /* Slightly rounded corners */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -211,6 +211,7 @@ span{
 
 .services-container {
     grid-template-columns: 1fr; /* Single column for small screens */
+    height: auto;
 }
 .services h2 {
     margin-bottom: 3rem;
@@ -219,7 +220,6 @@ span{
     margin: 20px auto; /* Center the contact box */
     padding: 20px;
     width: 90%; /* Adjust width */
-    height: auto; 
 }
 
 /* Tablet Styles */
