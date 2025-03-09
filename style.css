@@ -198,8 +198,8 @@ span{
 }
 /* Skills images */
 .skills .container .bar .info img {
-    width: 40px; /* Adjust size for skill icons */
-    height: 40px; /* Maintain aspect ratio */
+    width: 60px; /* Adjust size for skill icons */
+    height: 60px; /* Maintain aspect ratio */
     border-radius: 10px; /* Slightly rounded corners */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -211,7 +211,6 @@ span{
 
 .services-container {
     grid-template-columns: 1fr; /* Single column for small screens */
-    height: auto;
 }
 .services h2 {
     margin-bottom: 3rem;
@@ -390,7 +389,7 @@ span{
 }
 .service-box{
     background-color: #0d4d4d7a;
-    height: auto;
+    height: 300px;
     border-radius: 3rem;
     cursor: pointer;
 }
