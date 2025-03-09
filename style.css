@@ -219,6 +219,7 @@ span{
     margin: 20px auto; /* Center the contact box */
     padding: 20px;
     width: 90%; /* Adjust width */
+    height: auto; 
 }
 
 /* Tablet Styles */
