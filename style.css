@@ -226,6 +226,7 @@ span{
 @media (max-width: 991px) {
     .services-container {
         grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+        height: auto; /* Adjust
     }
     .skills .container {
         width: 80%; /* Adjust width for medium screens */
@@ -235,6 +236,7 @@ span{
 @media (max-width: 895px) {
     .services-container {
         grid-template-columns: repeat(1, 1fr); /* Single column for smaller devices */
+        height: auto; /* Adjust height */
     }
     .skills .container {
         width: 90%; /* Adjust width for smaller devices */
